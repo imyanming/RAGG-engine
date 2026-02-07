@@ -78,6 +78,9 @@ def build_retriever(vector_store, top_k: int=5):
     return:
         retriever: 可用於檢索的物件
     """
-    retriever = vector_store.as_retriever(search_type = 'similarity', search_kwargs={"k": top_k}) 
+    retriever = vector_store.as_retriever(
+        search_type = 'similarity', 
+        search_kwargs={"k": top_k},
+    ) 
     # 使用 vector_store 建立 retriever
     return retriever
