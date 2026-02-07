@@ -1,6 +1,9 @@
-from operator import itemgetter # 這個是 Python 的 operator 模組，用於生成 itemgetter
-from langchain_core.output_parsers import StrOutputParser # 這個是 LangChain 的 StrOutputParser，用於生成 StrOutputParser
-from core.prompt_template import prompt_template # 這個是 core 模組的 prompt_template，用於生成 prompt_template
+from operator import itemgetter 
+# 這個是 Python 的 operator 模組，用於生成 itemgetter
+from langchain_core.output_parsers import StrOutputParser 
+# 這個是 LangChain 的 StrOutputParser，用於生成 StrOutputParser
+from core.prompt_template import prompt_template 
+# 這個是 core 模組的 prompt_template，用於生成 prompt_template
 
 
 # RAG chain building
