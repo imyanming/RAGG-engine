@@ -2,7 +2,8 @@ import os # 這個是 Python 的 os 模組，用於生成 os
 
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader, JSONLoader
 # 這個是 LangChain 的 document_loaders 模組，用於生成 document_loaders
-from langchain_text_splitters import RecursiveCharacterTextSplitter # 這個是 LangChain 的 text_splitters 模組，用於生成 text_splitters
+from langchain_text_splitters import RecursiveCharacterTextSplitter 
+# 這個是 LangChain 的 text_splitters 模組，用於生成 text_splitters
 
 # Load file with different file type, including PDF, DOCX, TXT, Markdown files
 def load_document(file) -> list | None: # 這個是 load_document 函數，用於生成 load_document
@@ -34,7 +35,8 @@ def load_document(file) -> list | None: # 這個是 load_document 函數，用�
         print(f'loading {file}')
         loader = JSONLoader(file) # 使用 JSONLoader 載入 JSON 文件
     else:
-        print(f'This document format ({extension}) is not supported') # 如果檔案格式不支持，則返回 None
+        print(f'This document format ({extension}) is not supported') 
+        # 如果檔案格式不支持，則返回 None
         return None
     
     data = loader.load()
