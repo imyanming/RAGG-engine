@@ -1,4 +1,6 @@
-from langchain.prompts.chat import ( # 這個是 LangChain 的 ChatPromptTemplate，用於生成 Chat Prompt template
+from langchain.prompts.chat import ( 
+    # 這個是 LangChain 的 ChatPromptTemplate，用於生成 Chat Prompt template
+    
     ChatPromptTemplate, # 這個是 LangChain 的 ChatPromptTemplate，用於生成 Chat Prompt template
     SystemMessagePromptTemplate, # 這個是 LangChain 的 SystemMessagePromptTemplate，用於生成 System Prompt template
     HumanMessagePromptTemplate, # 這個是 LangChain 的 HumanMessagePromptTemplate，用於生成 Human Prompt template
@@ -6,8 +8,10 @@ from langchain.prompts.chat import ( # 這個是 LangChain 的 ChatPromptTemplat
 )
 
 # Prompt template
-def prompt_template() -> ChatPromptTemplate: # 這個是 LangChain 的 ChatPromptTemplate，用於生成 Chat Prompt template
-    system_prompt = SystemMessagePromptTemplate.from_template( # 這個是 LangChain 的 SystemMessagePromptTemplate，用於生成 System Prompt template
+def prompt_template() -> ChatPromptTemplate: 
+    # 這個是 LangChain 的 ChatPromptTemplate，用於生成 Chat Prompt template
+    system_prompt = SystemMessagePromptTemplate.from_template( 
+    # 這個是 LangChain 的 SystemMessagePromptTemplate，用於生成 System Prompt template
         """
         You are a powerful and helpful AI assistant and analyst. Your task is to provide comprehensive and accurate answers based on the provided "Document Content" and "Chat History".
 
@@ -26,7 +30,8 @@ def prompt_template() -> ChatPromptTemplate: # 這個是 LangChain 的 ChatPromp
         5. **Language Consistency**: Always use the same language as the user's question for your reply.
         """
     )
-    human_prompt = HumanMessagePromptTemplate.from_template( # 這個是 LangChain 的 HumanMessagePromptTemplate，用於生成 Human Prompt template
+    human_prompt = HumanMessagePromptTemplate.from_template( 
+    # 這個是 LangChain 的 HumanMessagePromptTemplate，用於生成 Human Prompt template
         '''
         ---
         **Document Content:**
@@ -40,9 +45,15 @@ def prompt_template() -> ChatPromptTemplate: # 這個是 LangChain 的 ChatPromp
         ---
         '''
     )# 這個是 LangChain 的 HumanMessagePromptTemplate，用於生成 Human Prompt template
-    chat_prompt = ChatPromptTemplate.from_messages([ # 這個是 LangChain 的 ChatPromptTemplate，用於生成 Chat Prompt template
-        system_prompt, # 這個是 LangChain 的 SystemMessagePromptTemplate，用於生成 System Prompt template
-        MessagesPlaceholder(variable_name='chat_history'), # 這個是 LangChain 的 MessagesPlaceholder，用於生成 Messages Placeholder
-        human_prompt, # 這個是 LangChain 的 HumanMessagePromptTemplate，用於生成 Human Prompt template
+    
+    chat_prompt = ChatPromptTemplate.from_messages([ 
+    # 這個是 LangChain 的 ChatPromptTemplate，用於生成 Chat Prompt template
+    
+        system_prompt, 
+        # 這個是 LangChain 的 SystemMessagePromptTemplate，用於生成 System Prompt template
+        MessagesPlaceholder(variable_name='chat_history'), 
+        # 這個是 LangChain 的 MessagesPlaceholder，用於生成 Messages Placeholder
+        human_prompt, 
+        # 這個是 LangChain 的 HumanMessagePromptTemplate，用於生成 Human Prompt template
     ])
     return chat_prompt # 這個是 LangChain 的 ChatPromptTemplate，用於生成 Chat Prompt template
