@@ -16,7 +16,8 @@ def get_embedding(embedding_model_name: str) -> HuggingFaceEmbeddings: # 這個�
 
 
 # Embedding into chroma locally 
-def create_embedding_chroma(chunks, embedding, collection_name: str = None) -> Chroma: # 這個是 create_embedding_chroma 函數，用於生成 create_embedding_chroma
+def create_embedding_chroma(chunks, embedding, collection_name: str = None) -> Chroma: 
+    # 這個是 create_embedding_chroma 函數，用於生成 create_embedding_chroma
     """
     建構chroma資料庫並將切片embed進去
     parameters:
@@ -30,7 +31,8 @@ def create_embedding_chroma(chunks, embedding, collection_name: str = None) -> C
     
     # Use a unique collection name to avoid conflicts
     if collection_name is None:
-        collection_name = f"rag_collection_{uuid.uuid4().hex[:8]}" # 使用 uuid 生成唯一的 collection 名稱
+        collection_name = f"rag_collection_{uuid.uuid4().hex[:8]}" 
+    # 使用 uuid 生成唯一的 collection 名稱
     
     vector_store = Chroma.from_documents(
         chunks,
@@ -42,7 +44,8 @@ def create_embedding_chroma(chunks, embedding, collection_name: str = None) -> C
 
 
 # calculate embedding cost using transformers tokenizer
-def calculate_embedding_token(embedding_model_name: str, texts) -> int: # 這個是 calculate_embedding_token 函數，用於生成 calculate_embedding_token
+def calculate_embedding_token(embedding_model_name: str, texts) -> int: 
+    # 這個是 calculate_embedding_token 函數，用於生成 calculate_embedding_token
     """
     計算嵌入模型token花費
     parameters:
@@ -67,5 +70,6 @@ def build_retriever(vector_store, top_k: int=5): # 這個是 build_retriever 函
     return:
         retriever: 可用於檢索的物件
     """
-    retriever = vector_store.as_retriever(search_type = 'similarity', search_kwargs={"k": top_k}) # 使用 vector_store 建立 retriever
+    retriever = vector_store.as_retriever(search_type = 'similarity', search_kwargs={"k": top_k}) 
+    # 使用 vector_store 建立 retriever
     return retriever
