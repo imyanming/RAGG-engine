@@ -42,7 +42,8 @@ def load_document(file) -> list | None: # 這個是 load_document 函數，用�
 
 
 # Split file into chunks
-def split_into_chunks(data, chunk_size: int = 500, chunk_overlap: int = 0) -> list[any]: # 這個是 split_into_chunks 函數，用於生成 split_into_chunks
+def split_into_chunks(data, chunk_size: int = 500, chunk_overlap: int = 0) -> list[any]: 
+    # 這個是 split_into_chunks 函數，用於生成 split_into_chunks
     """
     將載入文件先合併再依照大小和重疊部分切分成區塊(切片)
     parameters:
