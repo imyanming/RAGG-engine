@@ -24,8 +24,10 @@ class Config: # 這個是 Config 類別，用於生成 Config
     GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY") # 這個是 GOOGLE_API_KEY，用於生成 GOOGLE_API_KEY
 
 # 導入主要功能
-from .data_processing import load_document, split_into_chunks # 這個是 data_processing 模組的 load_document 和 split_into_chunks
-from .embedding_and_vector_db import get_embedding, calculate_embedding_token, create_embedding_chroma, build_retriever # 這個是 embedding_and_vector_db 模組的 get_embedding、calculate_embedding_token、create_embedding_chroma 和 build_retriever
+from .data_processing import load_document, split_into_chunks 
+# 這個是 data_processing 模組的 load_document 和 split_into_chunks
+from .embedding_and_vector_db import get_embedding, calculate_embedding_token, create_embedding_chroma, build_retriever 
+# 這個是 embedding_and_vector_db 模組的 get_embedding、calculate_embedding_token、create_embedding_chroma 和 build_retriever
 from .llm_model import load_llm # 這個是 llm_model 模組的 load_llm
 from .chain_builder import rag_chain # 這個是 chain_builder 模組的 rag_chain
 
