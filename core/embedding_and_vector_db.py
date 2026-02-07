@@ -1,9 +1,12 @@
-from langchain_community.embeddings import HuggingFaceEmbeddings # 這個是 LangChain 的 embeddings 模組，用於生成 HuggingFaceEmbeddings
-from langchain_chroma import Chroma # 這個是 LangChain 的 chroma 模組，用於生成 Chroma
+from langchain_community.embeddings import HuggingFaceEmbeddings 
+# 這個是 LangChain 的 embeddings 模組，用於生成 HuggingFaceEmbeddings
+from langchain_chroma import Chroma 
+# 這個是 LangChain 的 chroma 模組，用於生成 Chroma
 
 
 # Load embeddings model (Using HuggingFace Embedding model)
-def get_embedding(embedding_model_name: str) -> HuggingFaceEmbeddings: # 這個是 get_embedding 函數，用於生成 get_embedding
+def get_embedding(embedding_model_name: str) -> HuggingFaceEmbeddings: 
+    # 這個是 get_embedding 函數，用於生成 get_embedding
     """
     Loads the HuggingFace embedding model.
     parameters:
@@ -55,13 +58,15 @@ def calculate_embedding_token(embedding_model_name: str, texts) -> int:
         total_tokens: int
     """
     from transformers import AutoTokenizer
-    tokenizer = AutoTokenizer.from_pretrained(embedding_model_name) # 使用 AutoTokenizer 初始化 tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(embedding_model_name) 
+    # 使用 AutoTokenizer 初始化 tokenizer
     total_tokens = sum(len(tokenizer.encode(page.page_content)) for page in texts)
     return total_tokens # 返回編碼後的 token 數量
 
 
 # build retriever
-def build_retriever(vector_store, top_k: int=5): # 這個是 build_retriever 函數，用於生成 build_retriever
+def build_retriever(vector_store, top_k: int=5): 
+    # 這個是 build_retriever 函數，用於生成 build_retriever
     """
     構建Retriever，用於語意搜尋知識庫中最相關的文件片段
     parameters:
