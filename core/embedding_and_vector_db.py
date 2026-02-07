@@ -14,7 +14,10 @@ def get_embedding(embedding_model_name: str) -> HuggingFaceEmbeddings:
     returns:
         An instance of the HuggingFaceEmbeddings class.
     """
-    embedding = HuggingFaceEmbeddings(model_name=embedding_model_name, model_kwargs = {'device': 'cpu'})
+    embedding = HuggingFaceEmbeddings(
+        model_name=embedding_model_name, 
+        model_kwargs = {'device': 'cpu'}
+    )
     return embedding # 返回 HuggingFaceEmbeddings 模型物件
 
 
